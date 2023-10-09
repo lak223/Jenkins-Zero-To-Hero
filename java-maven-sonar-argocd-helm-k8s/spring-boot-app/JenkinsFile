@@ -15,7 +15,7 @@ pipeline {
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        // build the project and create a JAR filehttps://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git
+        // build the project and create a JAR filehttps://github.com/lak223/Jenkins-Zero-To-Hero.git
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
     }
@@ -48,7 +48,7 @@ pipeline {
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
-            GIT_USER_NAME = "chandanprasadpradhan"
+            GIT_USER_NAME = "lak223"
         }
         steps {
             withCredentials([string(credentialsId: 'Github', variable: 'GITHUB_TOKEN')]) {
